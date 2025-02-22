@@ -1,7 +1,14 @@
 import fastify from "fastify";
 
 const server = fastify();
-const quotes = [
+
+interface Quote {
+  id: number;
+  quote: string;
+  author: string;
+}
+
+const quotes: Quote[] = [
   {
     id: 1,
     quote: "A felicidade é o bem, a tristeza é o mal. A liberdade é o fim.",
@@ -69,9 +76,23 @@ server.get("/all", async (request, response) => {
 
 server.get("/random", async (request, response) => {
   const aleatoryNumber = Math.floor(Math.random() * quotes.length);
-  console.log(aleatoryNumber);
   response.type("application/json").code(200);
   return quotes[aleatoryNumber];
+});
+
+server.post<{ Body: Quote }>("/add", (request, response) => {
+  const { quote, author } = request.body;
+  if (quote != "" && author != "") {
+    response.type("application/json").code(200);
+    const id = quotes.length + 1;
+    const newQuote: Quote = {
+      id: id,
+      quote: quote,
+      author: author,
+    };
+    quotes.push(newQuote);
+    return { message: "Citação adicionada com sucesso." };
+  }
 });
 
 server.listen({ port: 8080 }, () => {
