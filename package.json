@@ -1,0 +1,24 @@
+{
+  "name": "minimal-api-fastify-citafast",
+  "version": "1.0.0",
+  "description": "CitaFast é uma API minimalista construída com Fastify e TypeScript, focada em gerenciar e fornecer citações. Permite consultar, adicionar e organizar citações de maneira simples e eficiente, com foco em alta performance para aplicações web.",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/server.js", 
+    "dev": "tsx src/server.ts", 
+    "build": "tsc", 
+    "server": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^5.20.1",
+    "tsup": "^8.3.6",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "fastify": "^5.2.1"
+  }
+}
