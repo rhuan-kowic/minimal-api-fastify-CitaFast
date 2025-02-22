@@ -112,11 +112,16 @@ Adiciona uma nova citação. Você deve enviar um corpo de solicitação com os 
 
 ```
 .
-├── src/
-│   
-├── dist/             # Diretório gerado após a compilação do TypeScript
-├── package.json      # Dependências e scripts do projeto
-└── tsconfig.json     # Configurações do TypeScript
+├── src/               # Código fonte do projeto (aplicação)
+│   ├── controllers/    # Lógica para manipulação de citações
+│   ├── model/         # Modelos e estrutura de dados
+│   ├── routes/         # Definição das rotas da API
+│   ├── server.ts       # Entrypoint do servidor (inicialização do Fastify)
+├── dist/               # Diretório gerado após a compilação do TypeScript
+├── package.json        # Dependências e scripts do projeto
+├── tsconfig.json       # Configurações do TypeScript
+└── node_modules/       # Dependências do Node.js
+
 ```
 
 ## Dependências
