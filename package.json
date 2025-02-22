@@ -4,19 +4,26 @@
   "description": "CitaFast é uma API minimalista construída com Fastify e TypeScript, focada em gerenciar e fornecer citações. Permite consultar, adicionar e organizar citações de maneira simples e eficiente, com foco em alta performance para aplicações web.",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/server.js", 
-    "dev": "tsx src/server.ts", 
-    "build": "tsc", 
-    "server": "node dist/server.js"
+    "start": "tsc && node dist/server.js",
+    "dev": "tsx src/server.ts",
+    "build": "tsc",
+    "server": "node dist/server.js",
+    "lint": "eslint 'src/**/*.{js,ts}'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
+    "eslint": "^8.57.1",
+    "globals": "^16.0.0",
     "tslint": "^5.20.1",
-    "tsup": "^8.3.6",
+    "tsup": "^2.0.3",
     "tsx": "^4.19.3",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.1"
   },
   "dependencies": {
     "fastify": "^5.2.1"
